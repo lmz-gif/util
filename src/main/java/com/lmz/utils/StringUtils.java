@@ -26,37 +26,7 @@ public class StringUtils {
 		}
 		
 	}
-	
-	
-	
-	
-	
-	public static void main(String[] args) {
-		String str = randomChar(10);
-		System.out.println("10个随机的字符是 " + str);
-		
-		
-		String s = StringUtils.randomCharAndNumber(20);
-		System.out.println("s is " + s);
-		
-		System.out.println("扩展名是："  + StringUtils.getFileSuffix("朱志广-1706E-补课计划.xlsx"));
-		
-		System.out.println(" reg 234 " + StringUtils.isNumber("234") );
 
-		System.out.println(" reg 2a34 " + StringUtils.isNumber("2a34") );
-		System.out.println(" reg kong  " + StringUtils.isNumber("") );
-		
-		
-		System.out.println(" is email  ? zhuzh@qq.com " + StringUtils.isEmail("zhuzh@qq.com"));
-		System.out.println(" is email ? zhuzg@qq.c1n  " + StringUtils.isEmail("zhuzg@qq.c1n") );
-		
-		System.out.println(" type2 is email  ? zhuzh@qq.com " + StringUtils.isEmail2("zhuzh@qq.com"));
-		System.out.println(" type2   email ? zhuzg@qq.c1n  " + StringUtils.isEmail2("zhuzg@qq.c1n") );
-		
-		
-		
-	}
-	
 	
 	
 	/**
@@ -177,7 +147,21 @@ public class StringUtils {
 	}
 	
 	
-	
+	/**
+	 * 字符串转HTML
+	 * @param src
+	 * @return
+	 * Windows 系统换行符是 “\r\n”,Linux 系统是 “\n”，因此要将 \n\r 替换成一个 \n
+	 * 再将 \n 结尾的这行文本用 <p></p > 标签包起来
+	 * 如果遇到单个 \r 字符要使用 <br/> 标签替换
+	 */
+	public static String toHtml(String src) {
+		String dst = src.replaceAll("\r\n", "\n");
+		dst = dst.replaceAll("\n", "</p><p>");
+		dst = "<p>" + dst + "</p>";
+		dst = dst.replaceAll("\r", "<br/>");
+		return dst;
+	}
 	
 
 }
