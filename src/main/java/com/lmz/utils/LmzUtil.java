@@ -39,12 +39,16 @@ public class LmzUtil {
 		return str.matches("[A-z]+");
 	}
 	
-	//	年龄
+	/*	
+	 * 年龄
+	 */
 	public static void getAge(String str) {
 		  
 	}
 	
-	//初始化时间
+	/**
+	 * 初始化时间
+	 */
 	public static Date getInitData(String str) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd,hh:mm:ss");
 		Date date = sdf.parse(str);
@@ -52,6 +56,10 @@ public class LmzUtil {
 		String format = sdf1.format(date);
 		Date date1 = sdf1.parse(format);
 		return date1;
+	}
+	
+	public void name() {
+		
 	}
 	
 }

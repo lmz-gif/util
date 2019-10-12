@@ -18,5 +18,6 @@ public class Alltest {
 	@Test
 	public void aa() throws ParseException {
 		System.out.println(LmzUtil.getInitData("1998-09-07,01:20:33"));
+		
 	}
 }
