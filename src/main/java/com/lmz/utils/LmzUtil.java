@@ -39,12 +39,6 @@ public class LmzUtil {
 		return str.matches("[A-z]+");
 	}
 	
-	/*	
-	 * 年龄
-	 */
-	public static void getAge(String str) {
-		  
-	}
 	
 	/**
 	 * 初始化时间
@@ -58,8 +52,6 @@ public class LmzUtil {
 		return date1;
 	}
 	
-	public void name() {
-		
-	}
+	
 	
 }

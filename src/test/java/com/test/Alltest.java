@@ -2,11 +2,14 @@ package com.test;
 
 
 
-import java.text.ParseException;
+
+import java.io.IOException;
 
 import org.junit.Test;
 
-import com.lmz.utils.LmzUtil;
+import com.lmz.utils.CharUtils;
+import com.lmz.utils.FileUtils;
+
 
 /**
   * @author lmz
@@ -15,9 +18,14 @@ import com.lmz.utils.LmzUtil;
   */
 
 public class Alltest {
+	
 	@Test
-	public void aa() throws ParseException {
-		System.out.println(LmzUtil.getInitData("1998-09-07,01:20:33"));
+	public void aa() throws IOException{
+		String str = FileUtils.readFileByLine("C:\\Users\\Administrator\\Desktop\\aa.txt");
+		
+		CharUtils.countWord(str, "a");
+		
 		
 	}
+	
 }
