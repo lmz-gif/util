@@ -15,19 +15,7 @@ import java.util.List;
  *
  */
 public class FileUtils {
-	
-	private static File file;
 
-	public static void main(String[] args) throws IOException {
-		
-		String readFileByLine = readFileByLine("D:\\1703A\\yunfu-parent\\pom.xml");
-		System.out.println("filename is " + readFileByLine);
-		//del("D:\\教学\\16.0\\小二 -副本");
-		
-		//file = new File("D:\\教学\\16.0\\小二 -副本");
-		//file.delete();
-		//copy("D:\\1703A\\groupparent\\groupparent.rar","D:\\1703A\\groupparent\\groupparent22.rar");
-	}
 	
 	/**
 	 * 删除文件或者文件夹，使用递归的算法
@@ -119,7 +107,7 @@ public class FileUtils {
 	
 	public static List<String> readFile(String fileName) throws IOException {
 		
-		List<String> strList = new ArrayList();
+		List<String> strList = new ArrayList<String>();
 		File file = new File(fileName);
 		FileInputStream fis = new FileInputStream(file);
 		InputStreamReader reader = new InputStreamReader(fis);

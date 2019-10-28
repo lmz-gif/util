@@ -163,5 +163,14 @@ public class StringUtils {
 		return dst;
 	}
 	
+	/**
+	 * %数据转换
+	 */
+	public static String getPercent(Integer num,Integer total) {
+
+		String format = String.format("%2.0f", (double)num/total*100);
+		return format+"%";
+	}
+	
 
 }

@@ -6,19 +6,7 @@ import java.util.Date;
 
 public class DateUtils {
 	
-	public static void main(String[] args) {
-		
-		Date birth = new Date(100, 0, 6);
-		int age = calAge(birth);
-		System.out.println("age is " + age);
-		
-		System.out.println("今天的月初是 " + getMonthStart(new Date()));
-		
-		
-		System.out.println("今天的月末是 " + getMonthEnd(new Date(119, 1, 23)));
-		
-		
-	}
+
 	
 	
 	/**

@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.lmz.utils.CharUtils;
 import com.lmz.utils.FileUtils;
+import com.lmz.utils.StringUtils;
 
 
 /**
@@ -20,12 +21,10 @@ import com.lmz.utils.FileUtils;
 public class Alltest {
 	
 	@Test
-	public void aa() throws IOException{
-		String str = FileUtils.readFileByLine("C:\\Users\\Administrator\\Desktop\\aa.txt");
+	public void aa() {
 		
-		CharUtils.countWord(str, "a");
-		
-		
+		System.out.println(StringUtils.getPercent(51, 68));
+		System.out.println(StringUtils.getPercent(1, 3));
 	}
 	
 }
