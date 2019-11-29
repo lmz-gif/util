@@ -16,7 +16,7 @@ public class JSoupTest {
 		// 记录文章数
 		int count = 0;
 		// 获取连接对象
-		Connection connect = Jsoup.connect("https://news.163.com/");
+		Connection connect = Jsoup.connect("http://book.zongheng.com/showchapter/472776.html");
 		// 获取文档对象
 		Document document = connect.get();
 		// 获取当前文档的所有超链接
@@ -32,7 +32,7 @@ public class JSoupTest {
 			//以https://news.163.com开头，以html结尾
 			//https://news\\.163\\.com.*html$
 			// 特殊要求  
-			if (url != null && url.startsWith("https://news.163.com/") && url.endsWith("html")) {
+			if (url != null && url.startsWith("http://book.zongheng.com/chapter/472776/") && url.endsWith("html")) {
 //			if (url != null && Pattern.matches(regex, url)) {
 				// 连接的文本内容
 				String title = href.text();
@@ -42,7 +42,7 @@ public class JSoupTest {
 				// 获取文章的文档对象
 				Document articleDoc = Jsoup.connect(url).get();
 				// 获取文章的内容元素对象
-				Element articleContentElement = articleDoc.getElementById("endText");
+				Elements articleContentElement = articleDoc.getElementsByClass("content");
 				// 判断元素是否为空
 				if (articleContentElement != null) {
 					// 获取纯文本内容
@@ -50,9 +50,9 @@ public class JSoupTest {
 					
 					//去除标题中的特殊符号
 					title = title.replace("?", "").replace("\"", "").replace(":", "").replace("/", "").replace("\\", "");
-					
+					System.out.println("----------------"+title);
 					//写入到文件中
-					FileUtil.writeFile("D:\\1706EJsoup\\" + title + ".txt", content, "utf8");
+					FileUtil.writeFile("D:/1706EJsoup/" + title + ".txt", content, "utf8");
 				}
 			}
 		}

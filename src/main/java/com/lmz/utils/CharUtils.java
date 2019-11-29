@@ -45,6 +45,8 @@ public class CharUtils {
 //		}
 		return hashMap.get(ch);
 	}
+	
+	
 	/**
 	 * 单词在字符串出现次数
 	 * 
